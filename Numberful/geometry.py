@@ -1,3 +1,4 @@
+import Numberful.error
 from Numberful.vector import Vector, Vec2, Vec3
 
 class Calculate():
@@ -54,31 +55,30 @@ class Angle():
 		if type(other) == Angle:
 			return Angle(self.value + other.value)
 		else:
-			raise TypeError(error.Message.operator_overload(self,other, "+"))
+			raise TypeError(error.ErrorMessage.operator_overload(self,other, "+"))
 	
 	def __sub__(self, other):
 		if type(other) == Angle:
 			return Angle(self.value - other.value)
 		else:
-			raise TypeError(error.Message.operator_overload(self,other, "-"))
+			raise TypeError(error.ErrorMessage.operator_overload(self,other, "-"))
 	
 	def __mul__(self, other):
 		if type(other) == Angle:
 			return Angle(self.value * other.value)
 		else:
-			raise TypeError(error.Message.operator_overload(self,other, "*"))
+			raise TypeError(error.ErrorMessage.operator_overload(self,other, "*"))
 
 	def __truediv__(self, other):
 		if type(other) == Angle:
 			return Angle(self.value / other.value)
 		else:
-			raise TypeError(error.Message.operator_overload(self,other, "/"))
+			raise TypeError(error.ErrorMessage.operator_overload(self,other, "/"))
 
 
 class Point2D():
-	def __init__(self, pos: tuple[float, float], color: tuple[int, int, int]):
+	def __init__(self, pos: tuple[float, float]):
 		self._pos = Vec2(*pos)
-		self._color = Color(*color)
 
 	@property
 	def pos(self) -> tuple[float, float]:
@@ -90,8 +90,7 @@ class Point2D():
 
 
 class Line2D():
-	def __init__(self, start: tuple[float, float], end: tuple[float,float], color: tuple[int,int,int]):
-		self._color = Color(*color)
+	def __init__(self, start: tuple[float, float], end: tuple[float,float]):
 		self._start = Vec2(*start)
 		self._end = Vec2(*end)
 	
@@ -118,10 +117,9 @@ class Line2D():
 
 #--- SHAPE CLASSES ---#
 class Shape:
-	def __init__(self, pos: tuple[float, float], rotation: float, color: tuple[int,int,int]):
+	def __init__(self, pos: tuple[float, float], rotation: float):
 		self._pos = Vec2(*pos)
 		self._rotation = Angle(rotation)
-		self._color = Color(*color)
 
 	@property
 	def pos(self) -> Vec2:
@@ -142,7 +140,7 @@ class Shape:
 
 class Rectangle(Shape):
 	def __init__(self, pos: tuple[float,float], width: float, height: float, rotation:float):
-		super().__init__(pos, rotation, color)
+		super().__init__(pos, rotation)
 		self._width = width
 		self._height = height
 
@@ -169,7 +167,7 @@ class Rectangle(Shape):
 
 class Polygon(Shape):
 	def __init__(self, pos: tuple[float, float], verts: tuple[tuple[float, float], ...], rotation: float):
-		super().__init__(pos, rotation, color)
+		super().__init__(pos, rotation)
 		self._verts = Vector.vectorize(Vec2, verts)
 
 
