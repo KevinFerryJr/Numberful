@@ -13,7 +13,7 @@ Numberful is currently very early in development and the scope of the project is
 
 * [Python >= 3.10](https://www.python.org/downloads/)
 
-### Installing
+### Installing (Windows Only!)
 
 * To install the Numberful module you'll have to download the project and package it first.
 * To package the project download the source files, open a terminal and navigate to the ```"Numberful/Numberful"``` directory of the project.
