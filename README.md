@@ -15,7 +15,11 @@ Numberful is currently very early in development and the scope of the project is
 
 ### Installing
 
-* To install the Numberful module itself simply type "pip install Numberful"
+* To install the Numberful module you'll have to download the project and package it first.
+* To package open a terminal navigate to the "Numberful/Numberful/" directory of the project.
+* Type the command "python setup.py sdist" into the termianl (this will package the project as a local module).
+* Finally to install the newly packaged module, while in the same directory as before, enter the command "pip install ." into the terminal (this will install the packaged module).
+* Check for install: To see if you were successful type "pip list" and search for "Numberful X.X.X" in the list of results. If you see it congulations, you've installed the Numberful module!
 
 ## Authors
 Kevin Ferry Jr.  
