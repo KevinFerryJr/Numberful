@@ -18,7 +18,7 @@ Numberful is currently very early in development and the scope of the project is
 * To install the Numberful module you'll have to download the project and package it first.
 * To package open a terminal navigate to the "Numberful/Numberful/" directory of the project.
 * Type the command
-'''bash
+'''
 python setup.py sdist
 '''
 * into the termianl (this will package the project as a local module).
