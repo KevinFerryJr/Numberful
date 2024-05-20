@@ -20,6 +20,7 @@ Numberful is currently very early in development and the scope of the project is
 * Type the command
 '''bash
 python setup.py sdist
+'''
 * into the termianl (this will package the project as a local module).
 * Finally to install the newly packaged module, while in the same directory as before, enter the command '''pip install .''' into the terminal (this will install the packaged module).
 * Check for install: To see if you were successful type '''pip list''' and search for "Numberful X.X.X" in the list of results. If you see it congulations, you've installed the Numberful module!
